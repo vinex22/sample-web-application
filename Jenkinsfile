@@ -25,7 +25,7 @@ pipeline{
             }
                   steps{
                       script{
-                      withSonarQubeEnv('Sonarcube') { 
+                      withSonarQubeEnv(credentialsId: 'sonay-api','Sonarcube') { 
                       sh "mvn sonar:sonar"
                        }
                       timeout(time: 1, unit: 'HOURS') {
