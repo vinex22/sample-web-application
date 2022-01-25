@@ -46,7 +46,7 @@ pipeline{
               steps{
                   script{
 		 sh 'cp -r ../devops-training@2/target .'
-                   sh 'docker build . -t vinex22/devops-training:$currentBuild.number'
+                   sh 'docker build . -t vinex22/devops-training:$Docker_tag'
 		   withCredentials([usernamePassword(credentialsId: 'docker_password', passwordVariable: 'docker_password', usernameVariable: 'docker_username')]) {
 				    
 				  sh 'docker login -u vinex22 -p $docker_password'
