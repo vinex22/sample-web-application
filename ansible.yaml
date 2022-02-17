@@ -4,8 +4,8 @@
     copy:
       src: deployment.yaml
       dest: /home/vinex22/ktemp
-  - name: delete the previous of kubernetes objects 
-    command: kubectl delete -f /home/vinex22/ktemp/deployment.yaml
+ # - name: delete the previous of kubernetes objects 
+  #  command: kubectl delete -f /home/vinex22/ktemp/deployment.yaml
   - name: Create a Deployment by reading the definition from a local file
     command: kubectl apply -f /home/vinex22/ktemp/deployment.yaml
       
